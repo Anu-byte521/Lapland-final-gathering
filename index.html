@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lapland Elfs & Human Folk Gathering</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ✅ Background Slideshow */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      animation: slideShow 16s infinite alternate ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @keyframes slideShow {
+      0% {
+        background-image: url("iQ-Student-Accommodation-Manchester-Lambert-Fairfield-Amenities-New-Bowling_Alley.webp");
+      }
+      50% {
+        background-image: url("iQ-Student-Accommodation-Manchester-Lambert-Fairfield-Amenities-New-Games_Area.webp");
+      }
+      100% {
+        background-image: url("iQ-Student-Accommodation-Manchester-Lambert-Fairfield-Amenities-New-Bowling_Alley.webp");
+      }
+    }
+
+    /* ✅ Dark overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: -1;
+    }
+
+    /* ✅ Snow */
+    .snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .snowflake {
+      position: absolute;
+      top: -10vh;
+      color: #ffffff;
+      font-size: 50.0rem;
+      opacity: 0.9;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10vh); }
+      100% { transform: translateY(110vh); }
+    }
+
+    /* ✅ Content box (UPDATED WITH 75% ZOOM) */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 25px 35px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 14px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+
+      /* ✅ 75% zoom */
+      transform: scale(0.75);
+      transform-origin: top center;
+    }
+
+    .logo {
+      width: 180px;
+      margin: 10px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 15px 0;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* ✅ Disclaimer style */
+    .disclaimer {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 18px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ Background slideshow -->
+  <div class="background"></div>
+
+  <!-- ✅ Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- ✅ Snow layer -->
+  <div class="snow" id="snow-container"></div>
+
+  <!-- ✅ Main content -->
+  <div class="content">
+
+    <!-- ✅ Your two logos -->
+    <img src="footer-logo.svg" class="logo" alt="Footer Logo">
+    <img src="IQ_Student_Accommodation_logo.png" class="logo" alt="IQ Logo">
+
+    <h1>🎉 Lapland Elfs & Human Folk Gathering</h1>
+
+    <p>You are All invited to a magical gathering of all Lapland Elfs and Human Folk alike…</p>
+
+    <p><strong>📍 IQ Accommodation, Lambert & Fairfield House, Manchester</strong></p>
+    <p><strong> M60 7LH</strong></p>
+    <p><strong> Date:</strong> 24th December, 2025</p>
+    <p><strong>🕗 Time:</strong> From 8pm</p>
+    <p><strong>👗 Dress code:</strong> It's Christmas Eve, wear what you like.</p>
+
+    <!-- ✅ Disclaimer -->
+    <p class="disclaimer">
+      Logos are used for identification purposes only. This event is not affiliated with IQ Student Accommodation.
+    </p>
+
+  </div>
+
+  <script>
+    const snowContainer = document.getElementById("snow-container");
+
+    function createSnowflake() {
+      const flake = document.createElement("div");
+      flake.classList.add("snowflake");
+      flake.textContent = "•";
+      flake.style.left = Math.random() * 100 + "vw";
+      flake.style.fontSize = (Math.random() * 1.2 + 0.4) + "rem";
+      flake.style.animationDuration = (Math.random() * 10 + 5) + "s";
+      snowContainer.appendChild(flake);
+
+      setTimeout(() => flake.remove(), 15000);
+    }
+
+    setInterval(createSnowflake, 120);
+  </script>
+
+</body>
+</html>
+
