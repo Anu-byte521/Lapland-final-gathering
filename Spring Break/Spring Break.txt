@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Break Party</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+      color: #ff6f61;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #ff6f61;
+    }
+
+    footer {
+      padding: 20px;
+      background: rgba(255,255,255,0.7);
+      font-size: 0.9em;
+    }
+
+    button {
+      background: #ff6f61;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background: #ff3b2e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌸 Spring Break Party 🌸</h1>
+    <p>Bright vibes. Good energy. Unforgettable night.</p>
+  </header>
+
+  <section class="section">
+    <div class="card">
+      <h2>📍 Location</h2>
+      <p>Lambert & Fairfield House-Social Space</p>
+    </div>
+
+    <div class="card">
+      <h2>🎓 Who's Invited?</h2>
+      <p>Students from MMU, University of Manchester, and Salford Uni</p>
+      <p class="highlight">Invite Only</p>
+      <p>+ Residents of Lambert & Fairfield automatically allowed</p>
+    </div>
+
+    <div class="card">
+      <h2>🍹 Drinks Menu</h2>
+      <p>Shots – <span class="highlight">£1</span></p>
+      <p>Beers – <span class="highlight">£2</span></p>
+      <p>Cocktails (e.g. Rum & Coke) – <span class="highlight">£4</span></p>
+    </div>
+
+    <div class="card">
+      <h2>🌴 Theme</h2>
+      <p>Spring Break Vibes – Bright, Chill & Relaxing</p>
+      <p>Dress light, colourful, and ready to vibe ✨</p>
+    </div>
+
+    <div class="card">
+      <h2>🎟️ RSVP</h2>
+      <p>Click below to confirm your spot</p>
+      <button onclick="rsvp()">RSVP Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Strictly controlled entry | Respect the vibe | No invite, no entry</p>
+  </footer>
+
+  <script>
+    function rsvp() {
+      alert("RSVP received! More details will be sent to you.");
+    }
+  </script>
+
+</body>
+</html>
